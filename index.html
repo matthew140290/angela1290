@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angela 1290 | Sistema escolar</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <div class="selection-section">
+        <div class="form">
+          <h1 style="text-align: center">Selección de Institución Educativa</h1>
+          <img
+            class="icono-selection"
+            src="./assets/img/undraw_teaching_58yg.svg"
+            alt="icono"
+          />
+          <label for="department">Selecciona Departamento/Ciudad</label>
+          <select id="department" onchange="updateInstitutions()">
+            <option value="" disabled selected>Selecciona...</option>
+            <option value="atlantico">Atlántico</option>
+            <option value="bogota">Bogotá</option>
+            <!-- Agrega más departamentos/ciudades aquí -->
+          </select>
+
+          <label for="institution">Selecciona institución</label>
+          <select id="institution">
+            <option value="" disabled selected>Selecciona...</option>
+          </select>
+
+          <button onclick="redirectToSubdomain()">Ingresar</button>
+        </div>
+        <div>
+          <p>Analizador y Gestionador de Logros Académicos</p>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <header class="navbar">
+          <div class="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <nav id="nav-menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-nosotros">Sobre Nosotros</a>
+            <a href="#soporte">Soporte</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#palabra-de-vida">Palabra de Vida</a>
+          </nav>
+        </header>
+        <div class="container-info">
+          <img
+            class="angela-logo"
+            src="./assets/img/LogoAngelaHorizontal.png"
+            alt="Logo Angela"
+          />
+          <h2 class="platform-text">Plataforma Académica</h2>
+          <p class="text">
+            Sistema de información basado en las disposiciones reglamentarias
+            del decreto 1290.
+          </p>
+          <button class="about">Más sobre nosotros</button>
+        </div>
+        <div class="text-life">
+          <p>Jesucristo es el camino, la verdad y la vida!</p>
+        </div>
+      </div>
+    </main>
+    <!-- Sección Sobre Nosotros -->
+    <section id="sobre-nosotros" class="skew-section">
+      <div class="skew-content">
+        <h2>Sobre Nosotros</h2>
+        <p>
+          Bienvenidos a [Nombre de la Empresa], tu socio confiable en [industria
+          o sector]. Desde nuestro inicio en [año de fundación], nos hemos
+          dedicado a ofrecer [productos/servicios] de alta calidad que
+          satisfacen las necesidades de nuestros clientes.
+        </p>
+
+        <!-- Sección Misión y Visión -->
+        <div class="about-grid">
+          <div class="about-item">
+            <img
+              src="./assets/img/objective.png"
+              alt="Ícono Misión"
+              class="about-icon"
+            />
+            <h2>Nuestra Misión</h2>
+            <p>
+              Nuestra misión es [descripción de la misión de la empresa]. Nos
+              esforzamos por [objetivo principal], brindando soluciones
+              innovadoras y un servicio excepcional que supera las expectativas
+              de nuestros clientes.
+            </p>
+          </div>
+
+          <div class="about-item">
+            <img
+              src="./assets/img/vision.png"
+              alt="Ícono Visión"
+              class="about-icon"
+            />
+            <h2>Nuestra Visión</h2>
+            <p>
+              Nos visualizamos como líderes en [industria o sector], reconocidos
+              por nuestra integridad, innovación y compromiso con la excelencia.
+              Aspiramos a [objetivo a largo plazo], contribuyendo positivamente
+              a [comunidad/sector/medio ambiente].
+            </p>
+          </div>
+        </div>
+
+        <!-- Sección Equipo y Valores -->
+        <div class="about-grid">
+          <div class="about-item">
+            <img
+              src="./assets/img/teamwork.png"
+              alt="Ícono Equipo"
+              class="about-icon"
+            />
+            <h2>Nuestro Equipo</h2>
+            <p>
+              Detrás de [Nombre de la Empresa] hay un equipo de profesionales
+              apasionados y dedicados. Cada miembro de nuestro equipo aporta
+              experiencia y creatividad, trabajando juntos para ofrecer
+              resultados excepcionales.
+            </p>
+          </div>
+
+          <div class="about-item">
+            <img
+              src="./assets/img/values.png"
+              alt="Ícono Valores"
+              class="about-icon"
+            />
+            <h2>Nuestros Valores</h2>
+            <ul>
+              <li>
+                <strong>Calidad:</strong> Nos comprometemos a ofrecer
+                productos/servicios de la más alta calidad.
+              </li>
+              <li>
+                <strong>Innovación:</strong> Buscamos constantemente nuevas
+                formas de mejorar y crecer.
+              </li>
+              <li>
+                <strong>Integridad:</strong> Actuamos con honestidad y
+                transparencia en todo lo que hacemos.
+              </li>
+              <li>
+                <strong>Compromiso:</strong> Nos dedicamos a satisfacer las
+                necesidades de nuestros clientes y a superar sus expectativas.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <p>
+          Gracias por elegir [Nombre de la Empresa]. Estamos aquí para servirte
+          y ayudarte a alcanzar tus objetivos. ¡Esperamos trabajar contigo!
+        </p>
+      </div>
+    </section>
+
+    <!-- Sección Soporte -->
+    <section id="soporte" class="skew-section">
+      <div class="skew-content support-section">
+        <div class="support-text">
+          <h2>Soporte</h2>
+          <p>Texto de prueba para la sección de soporte...</p>
+          <button>Obtener Soporte</button>
+        </div>
+        <div class="support-image">
+          <img src="./assets/img/contac.jpg" alt="Soporte" />
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="skew-section">
+      <div class="skew-content">
+        <h2>Contacto</h2>
+        <p>¿Tienes alguna pregunta o comentario? ¡No dudes en contactarnos!</p>
+
+        <!-- Formulario de contacto -->
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Ingresa tu nombre"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo electrónico:</label>
+            <input
+              type="email"
+              id="correo"
+              name="correo"
+              placeholder="Ingresa tu correo"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="asunto">Asunto:</label>
+            <input
+              type="text"
+              id="asunto"
+              name="asunto"
+              placeholder="Ingresa el asunto"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje:</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              placeholder="Escribe tu mensaje aquí..."
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Enviar Mensaje</button>
+        </form>
+      </div>
+    </section>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
