@@ -1,18 +1,29 @@
 html {
   font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
+  scroll-behavior: smooth;
   font-family: "Open Sans", serif;
   font-size: 1.6rem;
   margin: 0;
   padding: 0;
   background: #f0f4f8;
+  overflow-x: hidden; /* Evita el scroll horizontal */
 }
 
 .navbar {
   display: flex;
   justify-content: flex-end;
-  padding: 1rem;
+  padding: 7px 7px 0 0;
 }
 
 .navbar nav a {
@@ -25,13 +36,13 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 0;
-  margin-bottom: 200px;
+  margin-bottom: 102px;
 }
 
 .selection-section {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #0099ff, #00ccff);
   height: 95vh;
@@ -41,6 +52,9 @@ body {
 }
 
 .icono-selection {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   width: 303px;
   margin-bottom: 2rem;
 }
@@ -57,24 +71,23 @@ body {
   font-size: 7rem;
   margin: 0;
 }
+
 .text {
   font-size: 2rem;
   margin-top: 0;
 }
+
 .container-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .form {
   width: 80%;
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
-}
-
-.form img {
-  align-items: center;
 }
 
 .about {
@@ -89,6 +102,7 @@ body {
 #department {
   margin-bottom: 3rem;
 }
+
 label {
   display: block;
   margin-bottom: 0.5rem;
@@ -104,7 +118,7 @@ button {
 }
 
 button {
-  background: #ff6600;
+  background: #fe8f2f;
   color: #fff;
   font-size: 1.6rem;
   cursor: pointer;
@@ -127,10 +141,6 @@ footer {
 #sobre-nosotros {
   position: relative;
   padding: 100px 20px;
-  background-image: url("./assets/img/about-us.jpg");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
   background-position: center;
   background: linear-gradient(135deg, #005bea, #00c6fb);
   text-align: center;
@@ -150,6 +160,7 @@ footer {
   text-align: center;
   color: #fff;
 }
+
 /* Estilos para el grid de Misión, Visión, Equipo y Valores */
 .about-grid {
   display: grid;
@@ -170,31 +181,6 @@ footer {
   margin-bottom: 15px;
 }
 
-.about-item h2 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-}
-
-.about-item p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.about-item ul {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-}
-
-.about-item ul li {
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-}
-
-.about-item ul li strong {
-  color: #ff6f61;
-}
-
 #sobre-nosotros h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
@@ -204,11 +190,13 @@ footer {
   font-size: 1.2rem;
   margin-bottom: 20px;
   line-height: 1.6;
+  text-align: justify;
 }
 
 #sobre-nosotros ul {
   list-style: none;
   padding: 0;
+  text-align: justify;
 }
 
 #sobre-nosotros ul li {
@@ -217,15 +205,22 @@ footer {
 }
 
 #sobre-nosotros ul li strong {
-  color: #ff6f61;
+  color: #fff;
 }
 
 /* Estilos para la sección Soporte */
 #soporte {
-  background: url("./assets/img/support.jpg") no-repeat center center/cover;
-  color: #fff;
-  padding: 100px 20px;
+  display: flex;
+  background: #fff;
+  padding: 40px 20px 100px 20px;
   text-align: center;
+}
+
+#soporte h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #747474;
+  text-align: left;
 }
 
 .support-section {
@@ -237,23 +232,20 @@ footer {
 }
 
 .support-text {
+  order: 2;
   flex: 1;
   text-align: left;
-}
-
-.support-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
 }
 
 .support-text p {
   font-size: 1.2rem;
   margin-bottom: 20px;
+  color: #747474;
 }
 
 .support-text button {
   width: 300px;
-  background: #ff6f61;
+  background: #fe8f2f;
   color: #fff;
   border: none;
   padding: 12px 30px;
@@ -264,14 +256,14 @@ footer {
 }
 
 .support-text button:hover {
-  background: #ff4a3d;
+  background: #d76706;
 }
 
 .support-image img {
   max-width: 400px;
   border-radius: 50%;
-  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); */
 }
+
 /* Estilos para la sección de contacto */
 #contacto {
   background: linear-gradient(135deg, #005bea, #00c6fb);
@@ -280,14 +272,6 @@ footer {
   text-align: center;
   position: relative;
   overflow: hidden;
-}
-
-.skew-section {
-  transform: skewY(-3deg);
-}
-
-.skew-content {
-  transform: skewY(3deg);
 }
 
 #contacto h2 {
@@ -345,7 +329,7 @@ footer {
 }
 
 .submit-btn {
-  background: #ff6f61;
+  background: #fe8f2f;
   color: #fff;
   border: none;
   padding: 12px 30px;
@@ -359,18 +343,60 @@ footer {
   background: #ff4a3d;
 }
 
-/* Estilos para el menú hamburguesa */
-.hamburger {
+/* Estilos generales del menú hamburguesa */
+.ham {
   display: none;
   flex-direction: column;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  margin: 4px 0;
+.hamRotate.active {
+  transform: rotate(45deg);
+  stroke: #fff;
+}
+
+.hamRotate180.active {
+  transform: rotate(180deg);
+  stroke: #fff;
+}
+
+.line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: #fff;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+
+/* Estilo 6: Animación de líneas que se convierten en "X" */
+.ham6 .top {
+  stroke-dasharray: 40 172;
+}
+
+.ham6 .middle {
+  stroke-dasharray: 40 111;
+}
+
+.ham6 .bottom {
+  stroke-dasharray: 40 172;
+}
+
+.ham6.active .top {
+  stroke-dashoffset: -132px;
+}
+
+.ham6.active .middle {
+  stroke-dashoffset: -71px;
+}
+
+.ham6.active .bottom {
+  stroke-dashoffset: -132px;
 }
 
 /* Ocultar el menú en móviles y tablets */
@@ -379,124 +405,62 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
+  .ham {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
   }
 
   #nav-menu {
     display: none;
     flex-direction: column;
-    background: #0099ff;
+    justify-content: center;
+    background: rgba(0, 153, 255, 0.8);
     position: absolute;
-    top: 60px;
     right: 0;
     width: 100%;
     text-align: center;
+    z-index: 999;
+    height: 100%;
+    font-size: 1.9rem;
+    font-weight: 600;
   }
 
   #nav-menu a {
     margin: 10px 0;
     color: #fff;
+    text-decoration: none;
   }
 
   #nav-menu.active {
     display: flex;
   }
-}
 
-/* Estilos para móviles (max-width: 480px) */
-@media (max-width: 480px) {
+  .navbar {
+    padding: 0;
+  }
+
   .container {
     flex-direction: column;
-    margin-bottom: 0;
+    margin-bottom: 70px;
+  }
+
+  .container-info {
+    margin-top: 80px;
+  }
+
+  .container-info .about {
+    width: 250px;
   }
 
   .info-section {
+    justify-content: space-between;
+    order: 1;
     width: 100%;
-    height: auto;
     padding: 20px;
-    background-image: url("./assets/img/background-mobile.jpg");
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  }
-
-  .info-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
-
-  .container-info,
-  .text-life {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-  }
-
-  .selection-section {
-    width: 100%;
-    height: auto;
-    padding: 20px;
-  }
-
-  .platform-text {
-    font-size: 3rem;
-  }
-
-  .text {
-    font-size: 1.4rem;
-  }
-
-  .icono-selection {
-    width: 150px;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .support-section {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .support-image img {
-    max-width: 100%;
-    margin-top: 20px;
-    border-radius: 10px;
-  }
-
-  .contact-form {
-    padding: 15px;
-  }
-
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-  }
-  .contact-form .form-group {
-    width: 309px;
-  }
-}
-
-/* Estilos para tablets (max-width: 768px) */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    margin-bottom: 69px;
-  }
-
-  .info-section {
-    width: 100%;
-    height: auto;
-    padding: 20px;
-    background-image: url("./assets/img/background-tablet.jpg");
+    background-image: url("../img/background_769.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -521,6 +485,7 @@ footer {
   }
 
   .selection-section {
+    order: 2;
     width: 100%;
     height: auto;
     padding: 20px;
@@ -556,18 +521,105 @@ footer {
   .contact-form {
     padding: 20px;
   }
-  .contact-form .form-group {
-    max-width: 515px;
-  }
 
   .form-group input,
   .form-group textarea {
     width: 100%;
   }
-  #sobre-nosotros {
+
+  #sobre-nosotros,
+  #contacto {
     width: 100%;
   }
-  #contacto {
+}
+
+/* Estilos para móviles (max-width: 480px) */
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    margin-bottom: 0;
+    margin-bottom: 63px;
+  }
+  .container-info {
+    margin-top: 80px;
+  }
+
+  .container-info .about {
+    width: 250px;
+  }
+
+  .info-section {
+    justify-content: space-between;
+    width: 100%;
+    height: 90vh;
+    padding: 20px;
+    background: url("../img/background_769.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .info-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .container-info,
+  .text-life {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+  }
+
+  .selection-section {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .selection-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .platform-text {
+    font-size: 3rem;
+  }
+
+  .text {
+    font-size: 1.4rem;
+  }
+
+  .icono-selection {
+    width: 150px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .support-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .support-image img {
+    max-width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+
+  .contact-form {
+    padding: 15px;
+  }
+
+  .form-group input,
+  .form-group textarea {
     width: 100%;
   }
 }

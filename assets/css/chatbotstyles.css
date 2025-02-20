@@ -1,0 +1,212 @@
+/* Animación de entrada */
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animación de salida */
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message,
+.option-button {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Estilos para el botón de apertura del chatbot */
+.chatbot-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0099ff;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chatbot-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.chatbot-toggle img {
+  display: block;
+}
+
+/* Contenedor del chatbot */
+.chatbot-container {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+}
+
+.chatbot-container.active {
+  display: flex;
+}
+
+.chatbot-container.closing {
+  animation: slideOut 0.3s ease-out;
+}
+
+/* Encabezado del chatbot */
+.chatbot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #0099ff;
+  color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.chatbot-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.close-btn {
+  width: 50px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* Cuerpo del chatbot */
+.chatbot-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 600px;
+  background-color: #f9f9f9;
+}
+
+.chatbot-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  padding: 8px 12px;
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+.chatbot-message {
+  background-color: #e0e0e0;
+  align-self: flex-start;
+}
+
+.user-message {
+  background-color: #0099ff;
+  color: #fff;
+  align-self: flex-end;
+}
+
+/* Entrada de texto del chatbot */
+.chatbot-input {
+  display: flex;
+  padding: 10px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+
+.chatbot-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.chatbot-input button {
+  background-color: #0099ff;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chatbot-input button:hover {
+  background-color: #007acc;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+  .chatbot-container {
+    width: 90%;
+    right: 5%;
+    bottom: 70px;
+    max-height: 60vh;
+  }
+
+  .chatbot-body {
+    max-height: 70vh;
+  }
+
+  .chatbot-toggle {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+/* Estilos para los botones de opciones */
+.option-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #0099ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.option-button:hover {
+  background-color: #007acc;
+}

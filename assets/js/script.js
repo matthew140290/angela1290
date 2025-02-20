@@ -1,3 +1,24 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".ham");
+  const navMenu = document.querySelector("#nav-menu");
+
+  // Función para abrir/cerrar el menú
+  hamburger.addEventListener("click", function () {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+
+  // Cerrar el menú al hacer clic en un enlace (solo en móviles)
+  const navLinks = document.querySelectorAll("#nav-menu a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 768) {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+      }
+    });
+  });
+});
 // Diccionario de departamentos/ciudades e instituciones
 const data = {
   atlantico: {
@@ -50,7 +71,57 @@ function clearSelects() {
     '<option value="" disabled selected>Selecciona...</option>';
 }
 
-function toggleMenu() {
-  const navMenu = document.getElementById("nav-menu");
-  navMenu.classList.toggle("active");
+// Función para abrir/cerrar el chatbot con animaciones
+function toggleChatbot() {
+  const chatbotContainer = document.getElementById("chatbot-container");
+
+  if (chatbotContainer.classList.contains("active")) {
+    // Cerrar el chatbot con animación
+    chatbotContainer.classList.add("closing");
+    setTimeout(() => {
+      chatbotContainer.classList.remove("active", "closing");
+    }, 300); // Duración de la animación
+  } else {
+    // Abrir el chatbot
+    chatbotContainer.classList.add("active");
+  }
+}
+
+// // Función para enviar un mensaje
+// function sendMessage() {
+//   const input = document.getElementById("chatbot-input");
+//   const message = input.value.trim();
+
+//   if (message !== "") {
+//     // Agregar el mensaje del usuario al chat
+//     const chatbotBody = document.getElementById("chatbot-body");
+//     const userMessage = document.createElement("div");
+//     userMessage.classList.add("message", "user-message");
+//     userMessage.textContent = message;
+//     chatbotBody.querySelector(".chatbot-messages").appendChild(userMessage);
+
+//     // Limpiar el input
+//     input.value = "";
+
+//     // Simular una respuesta del chatbot
+//     setTimeout(() => {
+//       const chatbotMessage = document.createElement("div");
+//       chatbotMessage.classList.add("message", "chatbot-message");
+//       chatbotMessage.textContent =
+//         "Gracias por tu mensaje. Estamos procesando tu solicitud.";
+//       chatbotBody
+//         .querySelector(".chatbot-messages")
+//         .appendChild(chatbotMessage);
+
+//       // Desplazarse al final del chat
+//       chatbotBody.scrollTop = chatbotBody.scrollHeight;
+//     }, 1000);
+//   }
+// }
+
+// Función para enviar mensaje al presionar "Enter"
+function handleKeyPress(event) {
+  if (event.key === "Enter") {
+    sendMessage();
+  }
 }
