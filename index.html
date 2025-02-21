@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800&display=swap"
       rel="stylesheet"
     />
+    
   </head>
   <body>
     <header class="navbar">
@@ -36,7 +37,7 @@
         <a href="#sobre-nosotros">Sobre Nosotros</a>
         <a href="#soporte">Soporte</a>
         <a href="#contacto">Contacto</a>
-        <a href="#palabra-de-vida">Palabra de Vida</a>
+        <a href="#palabra-de-vida">Palabras de Vida</a>
       </nav>
     </header>
     <main class="container">
@@ -48,7 +49,7 @@
             src="./assets/img/undraw_teaching_58yg.svg"
             alt="icono"
           />
-          <label for="department">Selecciona Departamento/Ciudad</label>
+          <label for="department" class="text">Selecciona Departamento/Ciudad</label>
           <select id="department" onchange="updateInstitutions()">
             <option value="" disabled selected>Selecciona...</option>
             <option value="atlantico">Atlántico</option>
@@ -56,15 +57,15 @@
             <!-- Agrega más departamentos/ciudades aquí -->
           </select>
 
-          <label for="institution">Selecciona institución</label>
+          <label for="institution" class="text">Selecciona institución</label>
           <select id="institution">
             <option value="" disabled selected>Selecciona...</option>
           </select>
 
-          <button onclick="redirectToSubdomain()">Ingresar</button>
+          <button class="text" onclick="redirectToSubdomain()">Ingresar</button>
         </div>
         <div>
-          <p>Analizador y Gestionador de Logros Académicos</p>
+          <p class="text">Analizador y Gestionador de Logros Académicos</p>
         </div>
       </div>
 
@@ -157,21 +158,19 @@
             <h2>Nuestros Valores</h2>
             <ul>
               <li>
-                <strong>Calidad:</strong> Nos comprometemos a ofrecer
-                productos/servicios de la más alta calidad.
+                <strong>Calidad:</strong> <p>Nos comprometemos a ofrecer
+                  productos/servicios de la más alta calidad.</p>
               </li>
               <li>
-                <strong>Innovación:</strong> Buscamos constantemente nuevas
-                formas de mejorar y crecer.
+                <strong>Innovación:</strong> <p>Buscamos constantemente nuevas
+                  formas de mejorar y crecer.</p>
               </li>
               <li>
-                <strong>Integridad:</strong> Actuamos con honestidad y
-                transparencia en todo lo que hacemos.
+                <strong>Integridad:</strong> 
+                <p>Actuamos con honestidad y
+                  transparencia en todo lo que hacemos.</p>
               </li>
-              <li>
-                <strong>Compromiso:</strong> Nos dedicamos a satisfacer las
-                necesidades de nuestros clientes y a superar sus expectativas.
-              </li>
+              
             </ul>
           </div>
         </div>
@@ -186,9 +185,9 @@
     <!-- Sección Soporte -->
     <section id="soporte" class="skew-section">
       <div class="skew-content support-section">
-        <h2>Soporte</h2>
         <div class="support-text">
-          <p>Texto de prueba para la sección de soporte...</p>
+          <h2>Soporte</h2>
+          <p>Ofrecemos soporte técnico de cálidad 24/7</p>
           <button>Obtener Soporte</button>
         </div>
         <div class="support-image">
@@ -199,7 +198,7 @@
 
     <section id="contacto" class="skew-section">
       <div class="skew-content">
-        <h2>Contacto</h2>
+        <h2>Contáctanos</h2>
         <p>¿Tienes alguna pregunta o comentario? ¡No dudes en contactarnos!</p>
 
         <!-- Formulario de contacto -->
@@ -248,30 +247,40 @@
       </div>
     </section>
 
-    <!-- Botón de apertura del chatbot -->
+<!-- Chatbot Toggler -->
 <div class="chatbot-toggle" onclick="toggleChatbot()">
   <img src="./assets/img/chatbot-icon.png" alt="Chatbot" width="40" height="40" />
 </div>
 
-<!-- Contenedor del chatbot -->
-<div class="chatbot-container" id="chatbot-container">
-  <div class="chatbot-header">
-    <h3>Chatbot de Soporte</h3>
-    <button class="close-btn" onclick="toggleChatbot()">×</button>
+<div class="chatbot-popup">
+  <!-- Chatbot Header -->
+  <div class="chat-header">
+    <div class="header-info">
+      <img class="chatbot-logo" src="./assets/img/robotic.png" alt="Chatbot Logo" width="50" height="50">
+      <h2 class="logo-text">Angelabot</h2>
+    </div>
+    <button id="close-chatbot" class="material-symbols-rounded" onclick="closeChatbot()">X</button>
   </div>
-  <div class="chatbot-body" id="chatbot-body">
-    <div class="chatbot-messages">
+
+  <!-- Chatbot Body -->
+  <div class="chat-body">
+    <div class="message bot-message">
+      <img class="bot-avatar" src="./assets/img/robotic.png" alt="Chatbot Logo" width="50" height="50">
+      <div class="message-text">Hola, soy Angelabot. ¿En qué puedo ayudarte?</div>
+    </div>
+    <div class="message bot-message">
       
     </div>
   </div>
-  <div class="chatbot-input">
-    <input
-      type="text"
-      id="chatbot-input"
-      placeholder="Escribe tu pregunta..."
-      onkeypress="handleKeyPress(event)"
-    />
-    <button onclick="sendMessage()">Enviar</button>
+
+  <!-- Chatbot Footer -->
+  <div class="chat-footer">
+    <form action="#" class="chat-form">
+      <textarea placeholder="Escribe tu pregunta..." class="message-input" id="chatbot-input-ia" required></textarea>
+      <div class="chat-controls">
+        <button type="button" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+      </div>
+    </form>
   </div>
 </div>
 

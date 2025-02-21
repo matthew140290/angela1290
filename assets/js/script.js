@@ -18,6 +18,16 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  // Cambiar el color del navbar al hacer scroll
+  window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
 });
 // Diccionario de departamentos/ciudades e instituciones
 const data = {
@@ -69,59 +79,4 @@ function clearSelects() {
   const institutionSelect = document.getElementById("institution");
   institutionSelect.innerHTML =
     '<option value="" disabled selected>Selecciona...</option>';
-}
-
-// Función para abrir/cerrar el chatbot con animaciones
-function toggleChatbot() {
-  const chatbotContainer = document.getElementById("chatbot-container");
-
-  if (chatbotContainer.classList.contains("active")) {
-    // Cerrar el chatbot con animación
-    chatbotContainer.classList.add("closing");
-    setTimeout(() => {
-      chatbotContainer.classList.remove("active", "closing");
-    }, 300); // Duración de la animación
-  } else {
-    // Abrir el chatbot
-    chatbotContainer.classList.add("active");
-  }
-}
-
-// // Función para enviar un mensaje
-// function sendMessage() {
-//   const input = document.getElementById("chatbot-input");
-//   const message = input.value.trim();
-
-//   if (message !== "") {
-//     // Agregar el mensaje del usuario al chat
-//     const chatbotBody = document.getElementById("chatbot-body");
-//     const userMessage = document.createElement("div");
-//     userMessage.classList.add("message", "user-message");
-//     userMessage.textContent = message;
-//     chatbotBody.querySelector(".chatbot-messages").appendChild(userMessage);
-
-//     // Limpiar el input
-//     input.value = "";
-
-//     // Simular una respuesta del chatbot
-//     setTimeout(() => {
-//       const chatbotMessage = document.createElement("div");
-//       chatbotMessage.classList.add("message", "chatbot-message");
-//       chatbotMessage.textContent =
-//         "Gracias por tu mensaje. Estamos procesando tu solicitud.";
-//       chatbotBody
-//         .querySelector(".chatbot-messages")
-//         .appendChild(chatbotMessage);
-
-//       // Desplazarse al final del chat
-//       chatbotBody.scrollTop = chatbotBody.scrollHeight;
-//     }, 1000);
-//   }
-// }
-
-// Función para enviar mensaje al presionar "Enter"
-function handleKeyPress(event) {
-  if (event.key === "Enter") {
-    sendMessage();
-  }
 }

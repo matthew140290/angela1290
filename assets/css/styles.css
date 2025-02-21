@@ -21,15 +21,25 @@ body {
 }
 
 .navbar {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: flex-end;
-  padding: 7px 7px 0 0;
+  padding: 10px 20px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
 }
-
+/* Cambiar el color del navbar al hacer scroll */
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 .navbar nav a {
   margin: 0 1.6rem;
   text-decoration: none;
   color: #333;
+  transition: color 0.3s ease;
 }
 
 .container {
@@ -42,29 +52,38 @@ body {
 .selection-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background: linear-gradient(135deg, #0099ff, #00ccff);
   height: 95vh;
   color: #fff;
   padding: 2rem;
-  width: 30%;
+  width: 35%;
+  margin-left: 45px;
+  border-radius: 15px;
+  box-shadow: 2px 4px 10px 4px #b9b9b9;
+}
+
+.selection-section h1 {
+  font-size: 2.2rem;
+  margin: 0 0 2rem 0;
 }
 
 .icono-selection {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 303px;
+  width: 275px;
   margin-bottom: 2rem;
 }
 
 .info-section {
-  width: 60%;
+  width: 65%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 95vh;
+  margin: 2px 20px 0 25px;
 }
 
 .platform-text {
@@ -101,6 +120,7 @@ body {
 #institution,
 #department {
   margin-bottom: 3rem;
+  height: 35px;
 }
 
 label {
@@ -178,16 +198,28 @@ footer {
 
 .about-icon {
   width: 60px; /* Tamaño del ícono */
-  margin-bottom: 15px;
 }
 
 #sobre-nosotros h2 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   margin-bottom: 20px;
 }
 
+#sobre-nosotros .about-grid h2 {
+  font-size: 2.5rem;
+  margin: 0 0 20px 0;
+}
+#sobre-nosotros .about-grid h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+#sobre-nosotros .about-grid p {
+  font-size: 2rem;
+  margin: 0 0 20px 0;
+}
+
 #sobre-nosotros p {
-  font-size: 1.2rem;
+  font-size: 2rem;
   margin-bottom: 20px;
   line-height: 1.6;
   text-align: justify;
@@ -200,12 +232,12 @@ footer {
 }
 
 #sobre-nosotros ul li {
-  margin-bottom: 10px;
   font-size: 1.1rem;
 }
 
 #sobre-nosotros ul li strong {
   color: #fff;
+  font-size: 2rem;
 }
 
 /* Estilos para la sección Soporte */
@@ -217,7 +249,7 @@ footer {
 }
 
 #soporte h2 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   margin-bottom: 20px;
   color: #747474;
   text-align: left;
@@ -238,7 +270,7 @@ footer {
 }
 
 .support-text p {
-  font-size: 1.2rem;
+  font-size: 2rem;
   margin-bottom: 20px;
   color: #747474;
 }
@@ -249,7 +281,7 @@ footer {
   color: #fff;
   border: none;
   padding: 12px 30px;
-  font-size: 1rem;
+  font-size: 2rem;
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease;
@@ -275,18 +307,18 @@ footer {
 }
 
 #contacto h2 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   margin-bottom: 20px;
 }
 
 #contacto p {
-  font-size: 1.2rem;
+  font-size: 2rem;
   margin-bottom: 40px;
 }
 
 /* Estilos para el formulario */
 .contact-form {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.1);
   padding: 30px;
@@ -301,7 +333,7 @@ footer {
 
 .form-group label {
   display: block;
-  font-size: 1rem;
+  font-size: 2rem;
   margin-bottom: 5px;
   color: #fff;
 }
@@ -310,7 +342,7 @@ footer {
 .form-group textarea {
   width: 100%;
   padding: 10px;
-  font-size: 1rem;
+  font-size: 1.6rem;
   border: none;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.9);
@@ -333,7 +365,7 @@ footer {
   color: #fff;
   border: none;
   padding: 12px 30px;
-  font-size: 1rem;
+  font-size: 2rem;
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease;
@@ -404,44 +436,7 @@ footer {
   display: flex;
 }
 
-@media (max-width: 768px) {
-  .ham {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-  }
-
-  #nav-menu {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    background: rgba(0, 153, 255, 0.8);
-    position: absolute;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    z-index: 999;
-    height: 100%;
-    font-size: 1.9rem;
-    font-weight: 600;
-  }
-
-  #nav-menu a {
-    margin: 10px 0;
-    color: #fff;
-    text-decoration: none;
-  }
-
-  #nav-menu.active {
-    display: flex;
-  }
-
-  .navbar {
-    padding: 0;
-  }
-
+/* @media (max-width: 992px) {
   .container {
     flex-direction: column;
     margin-bottom: 70px;
@@ -531,6 +526,196 @@ footer {
   #contacto {
     width: 100%;
   }
+} */
+
+@media (max-width: 768px) {
+  .ham {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #fe8f2f;
+    padding: 4px 3px 3px 4px;
+    border-radius: 50%;
+    z-index: 1000;
+  }
+
+  #nav-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(0, 153, 255, 0.8);
+    position: fixed;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 999;
+    height: 100%;
+    font-size: 1.9rem;
+    font-weight: 600;
+  }
+
+  #nav-menu a {
+    margin: 10px 0;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  #nav-menu.active {
+    display: flex;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+  }
+  .container {
+    flex-direction: column;
+    margin-bottom: 70px;
+  }
+
+  .container-info {
+    margin-top: 80px;
+  }
+
+  .container-info .about {
+    width: 250px;
+  }
+
+  .info-section {
+    justify-content: space-between;
+    order: 1;
+    width: 100%;
+    padding: 20px;
+    background-image: url("../img/background_769.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin: 0;
+  }
+
+  .info-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  .container-info,
+  .text-life {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-size: 2.5rem;
+  }
+
+  .selection-section {
+    order: 2;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .platform-text {
+    font-size: 4rem;
+  }
+
+  .selection-section button,
+  .about {
+    height: 37px;
+    margin-bottom: 70px;
+  }
+
+  .text {
+    font-size: 2rem;
+  }
+
+  .icono-selection {
+    width: 200px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .support-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .support-image img {
+    max-width: 80%;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+  .form-group input {
+    height: auto;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+  }
+
+  .contact-form label {
+    font-size: 1.6rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1.4rem;
+    font-family: "open sans", sans-serif;
+  }
+
+  .submit-btn {
+    font-size: 1.8rem;
+  }
+
+  #sobre-nosotros,
+  #contacto {
+    width: 100%;
+  }
+  #sobre-nosotros h2 {
+    font-size: 3rem;
+  }
+
+  #sobre-nosotros .about-grid h2 {
+    font-size: 2.5rem;
+  }
+
+  #sobre-nosotros p,
+  li,
+  strong {
+    font-size: 1.8rem;
+    margin: 0 0 10px 0;
+  }
+  #soporte h2 {
+    font-size: 3rem;
+  }
+  #soporte p {
+    font-size: 1.8rem;
+  }
+  #soporte button {
+    width: 100%;
+    font-size: 1.8rem;
+  }
+  #contacto h2 {
+    font-size: 3rem;
+  }
+  #contacto p {
+    font-size: 1.8rem;
+  }
 }
 
 /* Estilos para móviles (max-width: 480px) */
@@ -575,6 +760,7 @@ footer {
     position: relative;
     z-index: 2;
     color: #fff;
+    font-size: 1.6rem;
   }
 
   .selection-section {
@@ -592,7 +778,7 @@ footer {
   }
 
   .text {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .icono-selection {
@@ -621,5 +807,11 @@ footer {
   .form-group input,
   .form-group textarea {
     width: 100%;
+  }
+  #sobre-nosotros p,
+  li,
+  strong {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
   }
 }
