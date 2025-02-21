@@ -1,5 +1,5 @@
 const OPENAI_API_KEY = "API_KEY"; // Reemplaza con tu API Key de OpenAI
-const OPENAI_API_URL = "https://api.openai.com/v1/chat/completions"; // URL de la API de OpenAI
+const OPENAI_API_URL = "URL"; // URL de la API de OpenAI
 
 // Función para alternar la visibilidad del chatbot
 function toggleChatbot() {
