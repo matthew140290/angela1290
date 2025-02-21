@@ -1,5 +1,4 @@
-const OPENAI_API_KEY =
-  "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"; // Reemplaza con tu API Key de OpenAI
+const OPENAI_API_KEY = "API_KEY"; // Reemplaza con tu API Key de OpenAI
 const OPENAI_API_URL = "https://api.openai.com/v1/chat/completions"; // URL de la API de OpenAI
 
 // Función para alternar la visibilidad del chatbot
